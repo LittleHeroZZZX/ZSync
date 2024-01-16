@@ -37,8 +37,8 @@ class Config:
         self.path.write_text(yaml.dump(self.config.toDict()))
 
     def addRecord(self, src, dest, mode):
-        srcPath = Path(src).resolve()
-        destPath = Path(dest).resolve()
+        srcPath = Path(src).expanduser().resolve()
+        destPath = Path(dest).expanduser().resolve()
         assert srcPath.exists() and destPath.exists(), f'{src} or {dest} does not exist'
         assert srcPath.is_dir() and destPath.is_dir(), f'{src} or {dest} is not a directory'
         self.config.records.append((str(srcPath), str(destPath), mode))
