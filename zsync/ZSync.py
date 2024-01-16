@@ -28,7 +28,6 @@ def sync(engine, config, args):
         print(f'Syncing record {i}: {recordToString(config.getRecords()[i])}')
         record = config.getRecords()[i]
         engine.sync(record[0], record[1], record[2], args.dry_run)
-        sleep(0.5)
 
 def main():
     config = Config()
