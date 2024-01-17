@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='ZSync',
-    version='1.1',
+    version='1.2',
     packages=find_packages(),
     url='https://github.com/LittleHeroZZZX/ZSync',
     license='MIT',
