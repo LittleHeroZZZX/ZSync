@@ -8,7 +8,7 @@ setup(
     version='1.0',
     packages=find_packages(),
     url='https://github.com/LittleHeroZZZX/ZSync',
-    license='',
+    license='MIT',
     author='ZhouXin',
     author_email='zhou.xin2000@outlook.com',
     description='a cli tool for syncing local files',
