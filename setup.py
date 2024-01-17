@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='ZSync',
-    version='1.0',
+    version='1.1',
     packages=find_packages(),
     url='https://github.com/LittleHeroZZZX/ZSync',
     license='MIT',
@@ -19,5 +19,6 @@ setup(
                 'zsync=zsync.ZSync:main',  # 'sync'是命令名，'your_package.sync'是模块名，'main'是你的脚本中用于启动程序的函数
             ],
         },
-    install_requires=['dotmap', 'tqdm', 'PyYAML', 'python>=3.12'],
+    install_requires=['dotmap', 'tqdm', 'PyYAML'],
+    python_requires='>=3.12',
 )
