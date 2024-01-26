@@ -8,15 +8,14 @@ class Config:
     def __init__(self):
         self.path = ""
         if sys.platform.startswith('win32'):
-            if sys.platform.startswith('win32'):
-                self.path = Path(os.getenv('APPDATA')) / 'ZSync' / 'config.yaml'
-            elif sys.platform.startswith('darwin'):
-                self.path = Path.home() / 'Library' / 'Preferences' / 'ZSync' / 'config.yaml'
-            elif sys.platform.startswith('linux'):
-                config_home = os.getenv('XDG_CONFIG_HOME', Path.home() / '.config')
-                self.path = Path(config_home) / 'ZSync' / 'config.yaml'
-            else:
-                self.path = Path.home() / 'ZSync' / 'config.yaml'
+            self.path = Path(os.getenv('APPDATA')) / 'ZSync' / 'config.yaml'
+        elif sys.platform.startswith('darwin'):
+            self.path = Path.home() / 'Library' / 'Preferences' / 'ZSync' / 'config.yaml'
+        elif sys.platform.startswith('linux'):
+            config_home = os.getenv('XDG_CONFIG_HOME', Path.home() / '.config')
+            self.path = Path(config_home) / 'ZSync' / 'config.yaml'
+        else:
+            self.path = Path.home() / 'ZSync' / 'config.yaml'
         self.path.parent.mkdir(parents=True, exist_ok=True)
         if not self.path.exists():
             self._createConfig()
